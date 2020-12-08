@@ -24,7 +24,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.dacn.DkActivity;
+import com.example.dacn.QuenmkActivity;
 import com.example.dacn.R;
+import com.example.dacn.TrangchuActivity;
 import com.example.dacn.ui.login.LoginViewModel;
 import com.example.dacn.ui.login.LoginViewModelFactory;
 
@@ -50,6 +52,25 @@ public class LoginActivity extends AppCompatActivity {
 
 
 
+        btn = (Button) findViewById(R.id.btnqmk);
+        btn.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent i = new Intent(LoginActivity.this, QuenmkActivity.class);
+                startActivity(i);
+            }
+
+        });
+
+//        btn = (Button) findViewById(R.id.login);
+//        btn.setOnClickListener(new View.OnClickListener(){
+//            @Override
+//            public void onClick(View v){
+//                Intent i = new Intent(LoginActivity.this, TrangchuActivity.class);
+//                startActivity(i);
+//            }
+//
+//        });
 
         loginViewModel = ViewModelProviders.of(this, new LoginViewModelFactory())
                 .get(LoginViewModel.class);
